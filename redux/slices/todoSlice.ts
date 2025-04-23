@@ -1,13 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { todo } from "node:test";
+import { Todo } from "@/interfaces";
 
-interface Todo {
-  id: string;
-  title: string;
-  completed: boolean;
-}
 const todoSlice = createSlice({
   name: "todo",
+  
   initialState: {
     todos: [] as Todo[],
   },
