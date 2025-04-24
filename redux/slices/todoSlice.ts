@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { Todo } from "@/interfaces";
 
+
 const todoSlice = createSlice({
   name: "todo",
   
@@ -17,8 +18,8 @@ const todoSlice = createSlice({
       );
       state.todos[index] = { ...state.todos[index], ...action.payload };
     },
-    deleteTodo: (state, action: { payload: string }) => {
-      state.todos.filter((todo) => todo.id !== action.payload);
+    deleteTodo: (state, action: { payload:string}) => {
+     state.todos= state.todos.filter((todo) => todo.id !== action.payload);
     },
     completeTodo: (state, action: { payload: string }) => {
       const index = state.todos.findIndex((todo) => todo.id === action.payload);
